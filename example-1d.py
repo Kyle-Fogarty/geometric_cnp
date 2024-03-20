@@ -70,7 +70,7 @@ optimizer = torch.optim.Adam(neuralprocess.parameters(), lr=3e-4)
 # neuralprocess.training = True
 # np_trainer.train(data_loader, 30)
 
-trainer = lightning.Trainer(accelerator="mps", max_epochs=10)
+trainer = lightning.Trainer(accelerator="cuda", max_epochs=10)
 trainer.fit(model=neuralprocess, train_dataloaders=data_loader)
 
 
